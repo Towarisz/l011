@@ -1,7 +1,7 @@
 const express = require("express")
 var hbs = require('express-handlebars');
 let app = express()
-const PORT = 3000;
+const PORT =  process.env.PORT || 3000;;
 
 const Datastore = require('nedb')
 
