@@ -1,7 +1,7 @@
 const express = require("express")
 var hbs = require('express-handlebars');
 let app = express()
-const PORT =  process.env.PORT || 3000;;
+const PORT =  process.env.PORT || 3000;
 
 const Datastore = require('nedb')
 
@@ -46,9 +46,13 @@ app.get("/edit", (req, res) => {
 })
 
 app.get("/remove", (req, res) => {
-    coll1.remove({ _id: req.query.id }, () => {
+    if(req.query.delete){
+        coll1.remove({ _id: req.query.id }, () => {
+            res.redirect("/")
+        })
+    }else{
         res.redirect("/")
-    })
+    }
 })
 app.get("/update",(req,res)=>{
     coll1.update({_id:req.query.id},{$unset:{edit:true}},()=>{
