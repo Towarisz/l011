@@ -1,0 +1,39 @@
+<div class="container">
+<div>
+    <p>Dane Pojazdu:</p>
+<form action="/data" id="mainForm">
+    <label for="a">Ubezpieczony:</label>
+    <span><input type="checkbox" name="a" id="a"></span>
+    <label for="b">Benzyna:</label>
+    <span><input type="checkbox" name="b" id="b"></span>
+    <label for="c">Uszkodzony:</label>
+    <span><input type="checkbox" name="c" id="c"></span>
+    <label for="d">Naped 4x4:</label>
+    <span><input type="checkbox" name="d" id="d"></span>
+    <input type="submit" value="DODAJ DO BAZY">
+</form>
+</div>
+<div>
+    <p>wszystkie pojazdy:</p>
+<table>
+    <thead>
+        <td></td>
+        <td>Ubezpieczony</td>
+        <td>Benzyna</td>
+        <td>Uszkodzony</td>
+        <td>Naped 4x4</td>
+        <td></td>
+        <td></td>
+    </thead>
+    {{#each a}}
+    <tr>
+        {{#if edit}}
+        {{> tableEdit}}
+        {{else}}
+        {{> tablecell}}
+        {{/if}}
+    </tr>
+    {{/each}}
+</table>
+</div>
+</div>

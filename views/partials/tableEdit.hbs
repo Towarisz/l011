@@ -1,0 +1,11 @@
+<form action="/update">
+<td>{{@index}}</td>
+<td><select name="s1"><option value="Tak">Tak</option><option value="Nie">Nie</option><option value="Brak">BRAK DANYCH</option></select></td>
+<td><select name="s2"><option value="Tak">Tak</option><option value="Nie">Nie</option><option value="Brak">BRAK DANYCH</option></select></td>
+<td><select name="s3"><option value="Tak">Tak</option><option value="Nie">Nie</option><option value="Brak">BRAK DANYCH</option></select></td>
+<td><select name="s4"><option value="Tak">Tak</option><option value="Nie">Nie</option><option value="Brak">BRAK DANYCH</option></select></td>
+<td><input type="hidden" name="id" value="{{_id}}"><input type="submit" value="update"></td>
+</form>
+<form action="/cancel">
+    <td><input type="hidden" name="id" value="{{_id}}"><input type="submit" value="cancel"></td>
+</form>
